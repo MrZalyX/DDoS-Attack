@@ -2,8 +2,6 @@
 
 ### This script is an OPEN SOURCE tool provided FREE TO USE for educational and testing purposes ONLY.
 
-### This is a modernized and reworked version of the tool originally created by Ha3MrX
-
 ### Unauthorized or illegal use of this tool, such as launching attacks against networks or systems without explicit permission, is strictly prohibited and may lead to severe legal consequences.
 
 ### Use responsibly and at your own risk!
