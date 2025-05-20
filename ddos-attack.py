@@ -11,7 +11,7 @@ def clear_terminal():
 
 def banner():
     clear_terminal()
-    os.system("figlet EXTREME DDoS")
+    os.system("figlet DDoS Attack")
     print("Author : MrZalyX")
     print("GitHub : https://github.com/MrZalyX\n")
 
