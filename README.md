@@ -15,11 +15,8 @@
 
 
 #	Download & Install:
-
-### git clone https://github.com/MrZalyX/DDoS-Attack
-
-### cd DDoS-Attack
-
-### chmod +x ddos-attack.py
-
-### python3 ddos-attack.py
+```sh
+git clone https://github.com/MrZalyX/DDoS-Attack
+cd DDoS-Attack
+chmod +x ddos-attack.py
+python3 ddos-attack.py
